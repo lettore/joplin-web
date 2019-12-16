@@ -12,4 +12,5 @@ RUN apk add npm python2 \
   && NPM_CONFIG_PREFIX=/app/joplin-bin npm install -g joplin --unsafe-perm \
   && rm /app/requirements.txt /app/env.sample \
   && apk del .build-deps
+RUN ["chmod", "+x", "/joplin-web-start.sh"]
 CMD ["sh", "-c", "/joplin-web-start.sh"]
